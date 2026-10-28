@@ -1,0 +1,15 @@
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: './',
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    target: 'es2020',
+    assetsInlineLimit: 0
+  },
+  server: {
+    host: '0.0.0.0',
+    port: Number(process.env.PORT || 3000)
+  }
+})

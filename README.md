@@ -17,3 +17,17 @@
 - 🌍 [Create with OMGithub](https://omgithub.com).
 - 🧬 [Explore the remix source](https://github.com/alexssandro56/Jogofutebol).
 <!-- omgithub:readme:end -->
+
+## Jogo de futebol 3D
+
+Jogo de arcade 6 vs 6 feito com Three.js. A partida dura 2 minutos e tem três níveis de dificuldade.
+
+### Controles
+
+- Desktop: `WASD`/setas movem, `Espaço` chuta, `E` passa, `Shift` corre, `Q` troca de jogador.
+- Celular: joystick à esquerda e botões `CHUTE`/`PASSE` à direita.
+
+### Scripts
+
+- `./start.sh` instala dependências, builda e serve `dist/` na porta `3000`.
+- `CAPTURE_URL=http://127.0.0.1:3000 CAPTURE_DIR=/tmp/captura ./capture.sh` captura as telas desktop e mobile.

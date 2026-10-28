@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#050b12" />
+    <meta name="description" content="Jogo de futebol 3D de arcade: drible, passe e marque gols direto no navegador." />
+    <title>Jogo de Futebol 3D</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="scene" aria-hidden="true"></div>
+      <div id="vignette" aria-hidden="true"></div>
+
+      <header id="hud" class="hidden">
+        <div class="scoreboard glass">
+          <div class="team team-blue">
+            <span class="crest crest-blue"></span>
+            <span class="team-name">AZUL</span>
+          </div>
+          <div class="score" id="score">0 : 0</div>
+          <div class="team team-red">
+            <span class="team-name">VERMELHO</span>
+            <span class="crest crest-red"></span>
+          </div>
+          <div class="clock" id="clock">02:00</div>
+        </div>
+        <button id="sound-btn" class="icon-btn" type="button" aria-label="Sound" aria-pressed="true">SOM ON</button>
+      </header>
+
+      <div id="goal-banner" class="hidden" aria-live="polite">
+        <span id="goal-text">GOL!</span>
+      </div>
+
+      <div id="hint" class="hidden">
+        <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> mover</span>
+        <span><kbd>ESPAÇO</kbd> chutar</span>
+        <span><kbd>E</kbd> passar</span>
+        <span><kbd>SHIFT</kbd> correr</span>
+        <span><kbd>Q</kbd> trocar jogador</span>
+      </div>
+
+      <div id="mobile-controls" class="hidden">
+        <div id="joystick" class="stick" aria-label="Joystick de movimento">
+          <div class="stick-ring"></div>
+          <div id="stick-knob"></div>
+        </div>
+        <div class="action-buttons">
+          <button id="pass-btn" class="action pass" type="button">PASSE</button>
+          <button id="kick-btn" class="action kick" type="button">CHUTE</button>
+        </div>
+      </div>
+
+      <div id="menu" class="overlay">
+        <div class="menu-card glass">
+          <div class="eyebrow"><span class="live-dot"></span> ARENA 3D · 6 VS 6</div>
+          <h1>JOGO DE<br /><em>FUTEBOL</em></h1>
+          <p class="tagline">
+            Drible, passe e marque. Um clássico de futebol em 3D, direto no navegador,
+            com controle no teclado ou no celular.
+          </p>
+
+          <div class="difficulty" role="group" aria-label="Dificuldade">
+            <button type="button" data-difficulty="easy">Fácil</button>
+            <button type="button" data-difficulty="normal" class="active">Médio</button>
+            <button type="button" data-difficulty="hard">Difícil</button>
+          </div>
+
+          <button id="play-btn" class="play-btn" type="button" aria-label="Play">
+            <span>JOGAR</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" /></svg>
+          </button>
+
+          <div class="controls-grid">
+            <div><span class="key">WASD</span> mover o jogador</div>
+            <div><span class="key">ESPAÇO</span> chutar a gol</div>
+            <div><span class="key">E</span> passar para o time</div>
+            <div><span class="key">SHIFT</span> correr mais rápido</div>
+          </div>
+        </div>
+        <footer class="credits">Feito com Three.js · joystick no celular · 2 minutos de partida</footer>
+      </div>
+
+      <div id="end-screen" class="overlay hidden">
+        <div class="menu-card glass compact">
+          <div class="eyebrow">APITO FINAL</div>
+          <h2 id="end-title">FIM DE JOGO</h2>
+          <p id="end-score" class="end-score">0 : 0</p>
+          <button id="restart-btn" class="play-btn" type="button">
+            <span>JOGAR NOVAMENTE</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="loading">Montando a arena…</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
